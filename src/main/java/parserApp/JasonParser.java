@@ -9,35 +9,39 @@ import org.json.simple.parser.*;
 
 public class JasonParser extends FileParser {
 
-    String file_type;
-    String file_path;
+   // String fileName;
 
 
-    JasonParser(String file_type,String file_path){
+    /*JasonParser(String file_type,String file_path){
         super();
-        this.file_type = file_type;
-        this.file_path = file_path;
-    }
+        this.fileName = fileName;
+
+    }*/
 
     JasonParser(){
+
         super();
     }
 
 
     @Override
-    String parsefile() {
+    String parsefile(String fileName) {
         ArrayList<String> result = new ArrayList<>();
 
         // parsing file "test_data.json"
         Object obj = null;
         try {
-            obj = new JSONParser().parse(new FileReader("test_data.json"));
+            obj = new JSONParser().parse(new FileReader("src/main/resources/" + fileName));
 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
+        } catch (NullPointerException e){
+            System.out.println(e);
+
         }
+
 
         // typecasting obj to JSONObject
         JSONObject jo = (JSONObject) obj;
@@ -52,7 +56,9 @@ public class JasonParser extends FileParser {
         //System.out.println(state_name);
         //System.out.println( district_name);
 
-        return result;
+        System.out.println(result);
+
+        return "";
 
 
     }
