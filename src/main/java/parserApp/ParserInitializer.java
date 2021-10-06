@@ -9,10 +9,9 @@ public class ParserInitializer {
 
         if (file_type == null || file_type.isEmpty())
             return null;
-        if ("JSON".equals(file_type)) {
+        if ("json".equals(file_type)) {
 
-
-            return new JasonParser();
+            return new JsonParser();
         }
         else if ("csv".equals(file_type)) {
 

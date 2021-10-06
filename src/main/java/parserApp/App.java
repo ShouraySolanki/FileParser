@@ -1,21 +1,44 @@
 package parserApp;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[]args){
 
-        ParserInitializer parserInitializer = new ParserInitializer();
-        FileParser fileParser = parserInitializer.InitializeParser("csv");
-        
+        //FileParser jsnobj = new JasonParser();
+        //jsnobj.parsefile("test1.json");
+
+
         Scanner sc = new Scanner(System.in);
 
-        FileParser jasonObj = new JasonParser();
+        ParserInitializer parserInitializer = new ParserInitializer();
+
+        System.out.println("Enter the FileType: ");
+        String filetype = sc.nextLine();
+        FileParser fileParser = parserInitializer.InitializeParser(filetype);
+        
+
+
+
         System.out.println("Enter the file name: ");
         String fileName = sc.nextLine();
 
-        fileParser.parsefile(fileName);
+        System.out.println("enter the required field: ");
+        ArrayList<String> field_data = new ArrayList<>();
+        boolean End = false;
+        while (End == false){
+
+            String fieldname = sc.nextLine();
+            field_data.add(fieldname);
+            if (fieldname.isEmpty()){
+                End = true;
+            }
+        }
+
+        System.out.println(fileParser.parsefile(fileName, field_data));
+
 
     }
 
