@@ -26,18 +26,18 @@ public class App {
         String fileName = sc.nextLine();
 
         System.out.println("enter the required field: ");
-        ArrayList<String> field_data = new ArrayList<>();
+        ArrayList<String> fieldData = new ArrayList<>();
         boolean End = false;
         while (End == false){
 
-            String fieldname = sc.nextLine();
-            field_data.add(fieldname);
-            if (fieldname.isEmpty()){
+            String fieldName = sc.nextLine();
+            fieldData.add(fieldName);
+            if (fieldName.isEmpty()){
                 End = true;
             }
         }
 
-        System.out.println(fileParser.parsefile(fileName, field_data));
+        System.out.println(fileParser.parseFile(fileName, fieldData));
 
 
     }

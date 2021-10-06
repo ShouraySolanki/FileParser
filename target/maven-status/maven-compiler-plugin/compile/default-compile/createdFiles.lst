@@ -1,4 +1,5 @@
 parserApp/FileParser.class
+parserApp/ParserInitializer.class
 parserApp/App.class
-parserApp/JasonParser.class
 parserApp/csvParser.class
+parserApp/JsonParser.class

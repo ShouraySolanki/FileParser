@@ -16,7 +16,7 @@ public class ParserInitializer {
         else if ("csv".equals(file_type)) {
 
 
-            return new csvParser();
+            return new CsvParser();
         }
 
         return null;

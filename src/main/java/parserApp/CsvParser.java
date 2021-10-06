@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class csvParser extends FileParser{
+public class CsvParser extends FileParser{
     private String fileName;
 
     /*
@@ -21,13 +21,14 @@ public class csvParser extends FileParser{
             this.file_path = file_path;
         }
     */
-    csvParser(){
+    CsvParser(){
+
         super();
     }
 
 
     @Override
-    protected ArrayList<String> parsefile(String fileName, ArrayList<String> field_data) {
+    protected ArrayList<String> parseFile(String fileName, ArrayList<String> fieldData) {
         this.fileName = fileName;
 
         ArrayList<String> result = new ArrayList<>();

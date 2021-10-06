@@ -13,7 +13,7 @@ public class JsonParser extends FileParser {
 
    // String fileName;
 
-    String fieldname;
+    //String fieldname;
     /*JasonParser(String file_type,String file_path){
         super();
         this.fileName = fileName;
@@ -27,7 +27,7 @@ public class JsonParser extends FileParser {
 
 
     @Override
-    protected ArrayList<String> parsefile(String fileName, ArrayList<String> field_data) {
+    protected ArrayList<String> parseFile(String fileName, ArrayList<String> fieldData) {
         ArrayList<String> result = new ArrayList<>();
 
         // parsing file "test_data.json"
@@ -49,10 +49,13 @@ public class JsonParser extends FileParser {
        // String state_name = (String) jo.get("state_name");
         //String district_name = (String) jo.get("district_name");
 
-        for (String data: field_data){
+        for (String data: fieldData){
+           // if (data.getClass().getSimpleName() == "String") {
+                String getdata = (String) jo.get(data);
+                result.add(getdata);
 
-            String getdata = (String) jo.get(data);
-            result.add(getdata);
+
+
         }
 
 
